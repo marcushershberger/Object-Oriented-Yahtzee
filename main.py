@@ -36,7 +36,7 @@ def rollDice():
         if not held[i]:
             dice[i] = roll()
     printDice(dice, held)
-            
+
 def roll():
     return randint(1,6)
 
@@ -53,6 +53,8 @@ while rounds.movesLeft:
     while not rounds.scored:
         useInput(getInput())
     rounds.checkAvailability()
-                
-checkHighScore(str(sc.total))  
+
+sc.updateTotals()
+sc.printCard(rounds)
+checkHighScore(sc.total)  
 printHighScores()
