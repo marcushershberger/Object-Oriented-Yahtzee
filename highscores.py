@@ -9,7 +9,7 @@ def printHighScores():
     return
 
 def checkHighScore(_score):
-    print ("Game over. Your final score is " + _score)
+    print ("Game over. Your final score is " + str(_score))
     rows = 1
     with open('scores.csv') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
@@ -42,5 +42,5 @@ def enterHighScore(_score, _rank, _prev):
             elif (rank < 11):
                 score_writer.writerow([str(rank), x[0], x[1]])
             rank += 1
-        
+
     return
